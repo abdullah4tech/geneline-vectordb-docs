@@ -6,19 +6,41 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'VectorDB',
+			description: 'Learn how to use Qdrant vector database with JavaScript',
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Getting Started',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Introduction', slug: 'getting-started/introduction' },
+						{ label: 'Installation', slug: 'getting-started/installation' },
+						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Collections',
+					items: [
+						{ label: 'Creating Collections', slug: 'collections/creating' },
+					],
+				},
+				{
+					label: 'Points',
+					items: [
+						{ label: 'Inserting Points', slug: 'points/inserting' },
+					],
+				},
+				{
+					label: 'Search',
+					items: [
+						{ label: 'Vector Search', slug: 'search/vector-search' },
+						{ label: 'Filtering', slug: 'search/filtering' },
+					],
+				},
+				{
+					label: 'Indexing',
+					items: [
+						{ label: 'Payload Indexes', slug: 'indexing/payload-indexes' },
+					],
 				},
 			],
 		}),
