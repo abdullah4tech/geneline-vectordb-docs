@@ -1,14 +1,15 @@
 ---
 title: "Quick Start"
-description: "Get started with Qdrant in just a few minutes - create collections, add vectors, and perform searches"
+description: "Get started with GenelineX Qdrant deployment in just a few minutes"
 ---
 
-This guide will walk you through your first Qdrant operations in just a few minutes. We'll create a collection, add some points, and perform a search.
+This guide will walk you through your first Qdrant operations using the GenelineX managed deployment. We'll create a collection, add some points, and perform a search.
 
 ## Prerequisites
 
-- Qdrant running locally (see [Installation](/getting-started/installation/))
+- Access to GenelineX Qdrant deployment
 - JavaScript/Node.js environment
+- Your GenelineX API credentials
 
 ## Step 1: Install the Client
 
@@ -16,14 +17,14 @@ This guide will walk you through your first Qdrant operations in just a few minu
 npm install @qdrant/js-client-rest
 ```
 
-## Step 2: Connect to Qdrant
+## Step 2: Connect to GenelineX Qdrant
 
 ```javascript
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 const client = new QdrantClient({
-  host: 'localhost',
-  port: 6333
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
 });
 
 // Test the connection
@@ -120,10 +121,10 @@ Here's the complete working example:
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 async function quickStart() {
-  // Connect to Qdrant
+  // Connect to GenelineX Qdrant deployment
   const client = new QdrantClient({
-    host: 'localhost',
-    port: 6333
+    url: 'https://vecstore.geneline-x.net',
+    apiKey: 'aiforAfrica@6282Geneline'
   });
 
   const collectionName = 'quick_start_demo';

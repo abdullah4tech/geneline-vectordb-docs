@@ -6,13 +6,12 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'VectorDB',
-			description: 'Learn how to use Qdrant vector database with JavaScript',
+			title: 'GenelineX Vector Database',
+			description: 'Managed Qdrant deployment for enterprise-grade vector operations',
 			sidebar: [
 				{
 					label: 'Getting Started',
 					items: [
-						{ label: 'Introduction', slug: 'getting-started/introduction' },
 						{ label: 'Installation', slug: 'getting-started/installation' },
 						{ label: 'Quick Start', slug: 'getting-started/quick-start' },
 					],

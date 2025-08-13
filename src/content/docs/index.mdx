@@ -1,14 +1,14 @@
 ---
-title: VectorDB Docs
-description: Learn how to use Qdrant vector database with JavaScript
+title: GenelineX Vector Database
+description: Managed Qdrant vector database service for high-performance similarity search
 template: splash
 hero:
-  tagline: A database suitable for high-performance similarity search
+  tagline: Managed Qdrant vector database service for high-performance similarity search
   image:
     file: ../../assets/houston.webp
   actions:
     - text: Get started
-      link: /getting-started/introduction/
+      link: /getting-started/installation/
       icon: right-arrow
       variant: primary
     - text: Quick Start Guide
@@ -20,10 +20,14 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 
 <CardGrid>
-	<Card title="Getting Started" icon="document">
-		Learn the basics of Qdrant and set up your first vector database.
-		[Start here →](/getting-started/introduction/)
-	</Card>
+	        <Card
+          title="Getting Started"
+          icon="rocket"
+        >
+          <a href="/getting-started/installation/" style="text-decoration: none; color: inherit;">
+            Start using GenelineX Vector Database in minutes. Install the client and connect to your managed instance.
+          </a>
+        </Card>
 	<Card title="Quick Start" icon="laptop">
 		Complete your first Qdrant operations in minutes.
 		[Quick Start →](/getting-started/quick-start/)

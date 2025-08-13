@@ -1,9 +1,9 @@
 ---
 title: "Vector Search"
-description: "How to perform vector searches in Qdrant using JavaScript"
+description: "How to perform vector searches using GenelineX Qdrant deployment"
 ---
 
-Vector search is the core functionality of Qdrant, allowing you to find similar vectors based on distance metrics. This guide covers performing effective vector searches with JavaScript.
+Vector search is the core functionality of Qdrant, allowing you to find similar vectors based on distance metrics. This guide covers performing effective vector searches with the GenelineX managed deployment.
 
 ## Basic Search
 
@@ -12,7 +12,10 @@ The simplest search finds vectors similar to a query vector:
 ```javascript
 import { QdrantClient } from '@qdrant/js-client-rest';
 
-const client = new QdrantClient({ host: 'localhost', port: 6333 });
+const client = new QdrantClient({
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
+});
 
 // Basic vector search
 const results = await client.search('my_collection', {

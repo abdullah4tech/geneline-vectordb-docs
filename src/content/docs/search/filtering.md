@@ -1,9 +1,9 @@
 ---
 title: "Filtering"
-description: "Advanced filtering capabilities in Qdrant for precise vector search results"
+description: "Advanced filtering capabilities with GenelineX Qdrant deployment"
 ---
 
-Qdrant's powerful filtering system allows you to combine vector similarity search with traditional database-style conditions. This guide covers all filtering capabilities.
+Qdrant's powerful filtering system allows you to combine vector similarity search with traditional database-style conditions. This guide covers all filtering capabilities using the GenelineX managed deployment.
 
 ## Basic Filtering Concepts
 
@@ -13,8 +13,8 @@ Filters in Qdrant work on **payload data** (metadata) and can be combined with v
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 const client = new QdrantClient({
-  host: 'localhost',
-  port: 6333
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
 });
 
 // Basic filtered search

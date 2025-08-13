@@ -1,9 +1,9 @@
 ---
 title: "Payload Indexes"
-description: "How to create and manage payload indexes in Qdrant for optimal filtering performance"
+description: "How to create and manage payload indexes with GenelineX Qdrant deployment"
 ---
 
-Payload indexes in Qdrant dramatically improve filtering performance by creating efficient data structures for specific payload fields. This guide covers creating, managing, and optimizing payload indexes.
+Payload indexes in Qdrant dramatically improve filtering performance by creating efficient data structures for specific payload fields. This guide covers creating, managing, and optimizing payload indexes using the GenelineX managed deployment.
 
 ## What are Payload Indexes?
 
@@ -12,7 +12,10 @@ Payload indexes are data structures that accelerate filtering operations on payl
 ```javascript
 import { QdrantClient } from '@qdrant/js-client-rest';
 
-const client = new QdrantClient({ host: 'localhost', port: 6333 });
+const client = new QdrantClient({
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
+});
 
 // Create a basic payload index
 await client.createPayloadIndex('my_collection', {

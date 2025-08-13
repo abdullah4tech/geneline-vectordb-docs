@@ -1,41 +1,26 @@
 ---
 title: "Installation"
-description: "How to install and run Qdrant locally"
+description: "How to connect to the GenelineX Qdrant deployment"
 ---
 
-This guide covers how to install and run Qdrant for development and testing.
+This guide covers how to connect to the GenelineX managed Qdrant deployment. No installation required - just connect and start using!
 
-## Quick Start with Docker
+## GenelineX Qdrant Deployment
 
-The fastest way to get Qdrant running:
+GenelineX provides a fully managed Qdrant deployment, so you don't need to install or manage your own instance.
 
-```bash
-docker run -p 6333:6333 qdrant/qdrant
-```
+### Connection Details
 
-This starts Qdrant and makes it available at `http://localhost:6333`.
+- **URL**: `https://vecstore.geneline-x.net`
+- **API Key**: `aiforAfrica@6282Geneline`
+- **Dashboard**: `https://vecstore.geneline-x.net/dashboard`
 
-## Docker Compose
+### Dashboard Access
 
-For persistent storage, create a `docker-compose.yml` file:
-
-```yaml
-version: '3.8'
-services:
-  qdrant:
-    image: qdrant/qdrant:latest
-    container_name: qdrant
-    ports:
-      - "6333:6333"
-    volumes:
-      - ./qdrant_storage:/qdrant/storage
-```
-
-Run with:
-
-```bash
-docker-compose up -d
-```
+You can access the Qdrant web interface at:
+- **URL**: https://vecstore.geneline-x.net/dashboard#/welcome
+- **Username**: `geneline-x`
+- **Password**: `aiforafrica@21718`
 
 ## Install JavaScript Client
 
@@ -45,54 +30,70 @@ Install the official Qdrant JavaScript client:
 npm install @qdrant/js-client-rest
 ```
 
-## Test Your Installation
+## Test Your Connection
 
-Check if Qdrant is running:
+Check if you can connect to the GenelineX deployment:
 
 ### Using curl
+
 ```bash
-curl http://localhost:6333/collections
+curl -H "api-key: aiforAfrica@6282Geneline" https://vecstore.geneline-x.net/collections
 ```
 
 ### Using JavaScript
+
 ```javascript
 import { QdrantClient } from '@qdrant/js-client-rest';
 
-const client = new QdrantClient({ host: 'localhost', port: 6333 });
+const client = new QdrantClient({
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
+});
 
 try {
   const collections = await client.getCollections();
-  console.log('✅ Qdrant is running!');
+  console.log('✅ GenelineX Qdrant is connected!');
+  console.log('Collections:', collections.collections);
 } catch (error) {
   console.error('❌ Connection failed:', error);
 }
 ```
 
-### Web UI
-Open [http://localhost:6333/dashboard](http://localhost:6333/dashboard) in your browser.
+**Expected output:**
+```
+✅ GenelineX Qdrant is connected!
+Collections: []
+```
+
+### Web Dashboard
+
+Access the Qdrant dashboard at: [https://vecstore.geneline-x.net/dashboard](https://vecstore.geneline-x.net/dashboard)
+
+## Environment Variables
+
+For better security in production applications, use environment variables:
+
+```javascript
+// .env file
+QDRANT_URL=https://vecstore.geneline-x.net
+QDRANT_API_KEY=aiforAfrica@6282Geneline
+
+// In your code
+import { QdrantClient } from '@qdrant/js-client-rest';
+import 'dotenv/config';
+
+const client = new QdrantClient({
+  url: process.env.QDRANT_URL,
+  apiKey: process.env.QDRANT_API_KEY
+});
+```
 
 ## Next Steps
 
-Now that Qdrant is installed:
+Now that you can connect to GenelineX Qdrant:
 
-- **[Quick Start Guide](/getting-started/quick-start/)** - Your first operations
+- **[Quick Start Guide](/getting-started/quick-start/)** - Your first operations with GenelineX
 - **[Creating Collections](/collections/creating/)** - Set up your data structure
-
-## Native Installation
-
-### Using Pre-built Binaries
-
-Download the latest release from the [GitHub releases page](https://github.com/qdrant/qdrant/releases):
-
-```bash
-# Linux
-wget https://github.com/qdrant/qdrant/releases/latest/download/qdrant-x86_64-unknown-linux-gnu.tar.gz
-tar -xzf qdrant-x86_64-unknown-linux-gnu.tar.gz
-./qdrant
-
-# macOS
-wget https://github.com/qdrant/qdrant/releases/latest/download/qdrant-x86_64-apple-darwin.tar.gz
-tar -xzf qdrant-x86_64-apple-darwin.tar.gz
 ./qdrant
 ```
 

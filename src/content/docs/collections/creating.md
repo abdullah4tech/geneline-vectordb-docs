@@ -1,9 +1,9 @@
 ---
 title: "Creating Collections"
-description: "Learn how to create and configure Qdrant collections with JavaScript"
+description: "Learn how to create and configure Qdrant collections with GenelineX deployment"
 ---
 
-Collections are containers that store your vectors in Qdrant. This guide shows you how to create and configure collections using JavaScript.
+Collections are containers that store your vectors in Qdrant. This guide shows you how to create and configure collections using the GenelineX managed deployment.
 
 ## Basic Collection Creation
 
@@ -12,7 +12,10 @@ The simplest way to create a collection:
 ```javascript
 import { QdrantClient } from '@qdrant/js-client-rest';
 
-const client = new QdrantClient({ host: 'localhost', port: 6333 });
+const client = new QdrantClient({
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
+});
 
 await client.createCollection('my_collection', {
   vectors: {

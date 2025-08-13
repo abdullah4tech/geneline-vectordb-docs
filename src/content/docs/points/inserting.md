@@ -1,9 +1,9 @@
 ---
 title: "Inserting Points"
-description: "Learn how to add vectors and metadata to your Qdrant collections with JavaScript"
+description: "Learn how to add vectors and metadata to your GenelineX Qdrant collections"
 ---
 
-Points are individual records in Qdrant collections that contain vectors and optional metadata. This guide shows you how to insert points using JavaScript.
+Points are individual records in Qdrant collections that contain vectors and optional metadata. This guide shows you how to insert points using the GenelineX managed deployment.
 
 ## Basic Point Structure
 
@@ -16,7 +16,10 @@ A point consists of:
 ```javascript
 import { QdrantClient } from '@qdrant/js-client-rest';
 
-const client = new QdrantClient({ host: 'localhost', port: 6333 });
+const client = new QdrantClient({
+  url: 'https://vecstore.geneline-x.net',
+  apiKey: 'aiforAfrica@6282Geneline'
+});
 
 // Basic point insertion
 await client.upsert('my_collection', {
