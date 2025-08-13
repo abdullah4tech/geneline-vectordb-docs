@@ -204,7 +204,6 @@ Most similar items: [
 📊 **Similarity Score**: How close vectors are (higher score = more similar for Cosine)
 
 ]
-```
 
 ## Next Steps
 
