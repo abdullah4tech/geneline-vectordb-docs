@@ -37,7 +37,7 @@ Check if you can connect to the GenelineX deployment:
 ### Using curl
 
 ```bash
-curl -H "api-key: your-api-key-here" https://your-cluster.geneline-x.net/collections
+curl -u "your-username:your-password" https://your-cluster.geneline-x.net/collections
 ```
 
 ### Using JavaScript
