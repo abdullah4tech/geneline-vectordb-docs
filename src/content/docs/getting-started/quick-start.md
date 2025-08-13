@@ -23,8 +23,8 @@ npm install @qdrant/js-client-rest
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 const client = new QdrantClient({
-  url: 'https://vecstore.geneline-x.net',
-  apiKey: 'aiforAfrica@6282Geneline'
+  url: 'https://your-cluster.geneline-x.net',
+  apiKey: 'your-api-key-here'
 });
 
 // Test the connection
@@ -123,8 +123,8 @@ import { QdrantClient } from '@qdrant/js-client-rest';
 async function quickStart() {
   // Connect to GenelineX Qdrant deployment
   const client = new QdrantClient({
-    url: 'https://vecstore.geneline-x.net',
-    apiKey: 'aiforAfrica@6282Geneline'
+    url: 'https://your-cluster.geneline-x.net',
+    apiKey: 'your-api-key-here'
   });
 
   const collectionName = 'quick_start_demo';

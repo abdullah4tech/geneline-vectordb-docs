@@ -13,8 +13,8 @@ Filters in Qdrant work on **payload data** (metadata) and can be combined with v
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 const client = new QdrantClient({
-  url: 'https://vecstore.geneline-x.net',
-  apiKey: 'aiforAfrica@6282Geneline'
+  url: 'https://your-cluster.geneline-x.net',
+  apiKey: 'your-api-key-here'
 });
 
 // Basic filtered search

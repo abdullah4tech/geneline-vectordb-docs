@@ -11,16 +11,16 @@ GenelineX provides a fully managed Qdrant deployment, so you don't need to insta
 
 ### Connection Details
 
-- **URL**: `https://vecstore.geneline-x.net`
-- **API Key**: `aiforAfrica@6282Geneline`
-- **Dashboard**: `https://vecstore.geneline-x.net/dashboard`
+- **URL**: `https://your-cluster.geneline-x.net`
+- **API Key**: `your-api-key-here`
+- **Dashboard**: `https://your-cluster.geneline-x.net/dashboard`
 
 ### Dashboard Access
 
 You can access the Qdrant web interface at:
-- **URL**: https://vecstore.geneline-x.net/dashboard#/welcome
-- **Username**: `geneline-x`
-- **Password**: `aiforafrica@21718`
+- **URL**: `https://your-cluster.geneline-x.net/dashboard#/welcome`
+- **Username**: `your-username`
+- **Password**: `your-password`
 
 ## Install JavaScript Client
 
@@ -37,7 +37,7 @@ Check if you can connect to the GenelineX deployment:
 ### Using curl
 
 ```bash
-curl -H "api-key: aiforAfrica@6282Geneline" https://vecstore.geneline-x.net/collections
+curl -H "api-key: your-api-key-here" https://your-cluster.geneline-x.net/collections
 ```
 
 ### Using JavaScript
@@ -46,8 +46,8 @@ curl -H "api-key: aiforAfrica@6282Geneline" https://vecstore.geneline-x.net/coll
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 const client = new QdrantClient({
-  url: 'https://vecstore.geneline-x.net',
-  apiKey: 'aiforAfrica@6282Geneline'
+  url: 'https://your-cluster.geneline-x.net',
+  apiKey: 'your-api-key-here'
 });
 
 try {
@@ -67,7 +67,7 @@ Collections: []
 
 ### Web Dashboard
 
-Access the Qdrant dashboard at: [https://vecstore.geneline-x.net/dashboard](https://vecstore.geneline-x.net/dashboard)
+Access the Qdrant dashboard at: [https://your-cluster.geneline-x.net/dashboard](https://your-cluster.geneline-x.net/dashboard)
 
 ## Environment Variables
 
@@ -75,8 +75,8 @@ For better security in production applications, use environment variables:
 
 ```javascript
 // .env file
-QDRANT_URL=https://vecstore.geneline-x.net
-QDRANT_API_KEY=aiforAfrica@6282Geneline
+QDRANT_URL=https://your-cluster.geneline-x.net
+QDRANT_API_KEY=your-api-key-here
 
 // In your code
 import { QdrantClient } from '@qdrant/js-client-rest';

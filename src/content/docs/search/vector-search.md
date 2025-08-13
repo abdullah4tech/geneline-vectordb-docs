@@ -13,8 +13,8 @@ The simplest search finds vectors similar to a query vector:
 import { QdrantClient } from '@qdrant/js-client-rest';
 
 const client = new QdrantClient({
-  url: 'https://vecstore.geneline-x.net',
-  apiKey: 'aiforAfrica@6282Geneline'
+  url: 'https://your-cluster.geneline-x.net',
+  apiKey: 'your-api-key-here'
 });
 
 // Basic vector search
